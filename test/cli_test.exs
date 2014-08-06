@@ -15,5 +15,11 @@ defmodule CliTest do
   test "count is defaulted if two values given" do
     assert parse_args( ["user", "project"]) == {"user", "project", 4}
   end
+  
+  test "a set of aliases are given" do
+    assert OptionParser.parse( ["-d"], aliases: [d: :debug]) == {[debug: true],[],[]}    
+    assert OptionParser.parse( ["--d"], aliases: [d: :debug]) == {[d: true],[],[]} 
+    assert OptionParser.parse( ["----d"], aliases: [d: :debug]) == {[__d: true],[],[]} 
+  end
 
 end
