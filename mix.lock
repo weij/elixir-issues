@@ -1,3 +1,4 @@
 %{"hackney": {:git, "git://github.com/benoitc/hackney.git", "5e654360c0c868a5b607b6283a5bb1fb828152a2", []},
   "httpoison": {:package, "0.3.2"},
-  "idna": {:git, "git://github.com/benoitc/erlang-idna.git", "21aa158b7f36bf2a000f12fe40d7f21eece9cf65", [tag: "hackney-0.11.2"]}}
+  "idna": {:git, "git://github.com/benoitc/erlang-idna.git", "21aa158b7f36bf2a000f12fe40d7f21eece9cf65", [tag: "hackney-0.11.2"]},
+  "jsx": {:package, "2.0.4"}}
