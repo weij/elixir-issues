@@ -59,6 +59,10 @@ defmodule Issues.CLI do
     list |> Enum.map(&Enum.into(&1, HashDict.new))
   end
   
+  def sort_into_ascending_order(list_of_issues) do
+    Enum.sort list_of_issues, 
+              fn i1, i2 -> i1["created_at"] <= i2["created_at"] end
+  end
   
    
 end
