@@ -4,7 +4,7 @@ defmodule Issues.Mixfile do
   def project do
     [app: :issues,
      version: "0.0.1",
-     elixir: "~> 0.14.4-dev",
+     elixir: "~> 1.0.2",
      deps: deps]
   end
 
@@ -26,9 +26,8 @@ defmodule Issues.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [
-      { :hackney, github: "benoitc/hackney" },
-      { :httpoison, "~> 0.3" },
-      { :jsx, "~> 2.0" }
+      { :httpoison, "~> 0.5" },
+      { :jsx, "~> 2.4" }
     ]
   end
 end
