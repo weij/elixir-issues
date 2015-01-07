@@ -3,7 +3,7 @@
 # to aid in doing so.
 use Mix.Config
 
-config :issues, github_rul: "https://api.github.com"
+config :issues, github_url: "https://api.github.com"
 
 # Note this file is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
