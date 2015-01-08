@@ -1,8 +1,10 @@
 defmodule CliTest do
   use ExUnit.Case
   
-  import Issues.CLI, only: [parse_args: 1, sort_into_ascending_order: 1, convert_to_list_of_hashdicts: 1]
-
+  import Issues.CLI, only: [parse_args: 1, 
+                            sort_into_ascending_order: 1, 
+                            convert_to_list_of_hashdicts: 1]
+  
   test ":help returned by option parsing with -h and --help options" do
     assert parse_args(["--help", "anything"]) == :help
     assert parse_args(["-h", "anything"]) == :help
