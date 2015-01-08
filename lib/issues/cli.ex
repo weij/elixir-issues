@@ -1,6 +1,6 @@
 defmodule Issues.CLI do
   
-  @default_count 4
+  @default_count Application.get_env(:issues, :default_count)
 
   @moduledoc """
     Handle the command line parsing and the dispatch to the various functions that end up

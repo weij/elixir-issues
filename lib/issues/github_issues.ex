@@ -1,6 +1,6 @@
 defmodule Issues.GithubIssues do
   
-  @user_agent [ {"User-agent", "Elixir weijun@localgravity.com"}]
+  @user_agent Application.get_env(:issues, :user_agent)
   @github_url Application.get_env(:issues, :github_url)
 
   def fetch(user, project) do
