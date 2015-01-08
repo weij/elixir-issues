@@ -1,5 +1,7 @@
 defmodule Issues.CLI do
-  
+ 
+  import Issues.TableFormatter, only: [ print_table_for_columns: 2  ]
+
   @default_count Application.get_env(:issues, :default_count)
 
   @moduledoc """
@@ -41,10 +43,12 @@ defmodule Issues.CLI do
     System.halt(0)
   end
   
-  def process({user, project, _count}) do
+  def process({user, project, count}) do
     Issues.GithubIssues.fetch(user, project)
     |> decode_response
     |> convert_to_list_of_hashdicts
+    |> Enum.take(count)
+    |> print_table_for_columns(["number", "created_at", "title"])
   end
 
   def decode_response({:ok, body}), do: body
